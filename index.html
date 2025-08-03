@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josephine Duba Kanu - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: #4338ca;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: #4f46e5;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c7d2fe;
+        }
+
+        .mobile-nav {
+            display: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .mobile-nav a:hover {
+            background-color: #4f46e5;
+        }
+
+        .hero {
+            background-color: #3730a3;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        /* Main content */
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-icon {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.75rem;
+            color: #4338ca;
+        }
+
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        /* About section */
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-badge {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+
+        /* Education section */
+        .education-item {
+            margin-bottom: 2rem;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .education-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .education-date {
+            color: #4338ca;
+            font-weight: 500;
+        }
+
+        .education-degree {
+            color: #6b7280;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #4338ca;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+
+        .download-btn:hover {
+            background-color: #3730a3;
+        }
+
+        /* Skills section */
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+
+        .skills-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 0.625rem;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: #4338ca;
+            border-radius: 9999px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: #f3f4f6;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .language-item {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .language-level {
+            color: #6b7280;
+        }
+
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Interests section */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .interest-card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .interest-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .interest-description {
+            color: #6b7280;
+        }
+
+        /* Contact section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-section p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-item-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #4338ca;
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .contact-item h4 {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .contact-item p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .contact-form h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4338ca;
+            box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #4338ca;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #3730a3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-info h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-info p {
+            color: #9ca3af;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.125rem;
+            }
+
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Josephine Duba Kanu</h1>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span id="menu-icon">☰</span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#interests">Interests</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="mobile-nav hidden" id="mobile-nav">
+                <a href="#about" onclick="closeMobileMenu()">About</a>
+                <a href="#education" onclick="closeMobileMenu()">Education</a>
+                <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+                <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+                <a href="#interests" onclick="closeMobileMenu()">Interests</a>
+                <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+            </nav>
+        </div>
+        <div class="hero">
+            <div class="container">
+                <h2>Software Engineer</h2>
+                <p>A self-driven individual with expertise in software development, problem-solving, and innovative thinking.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <div class="section-header">
+                <div class="section-icon">👤</div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="card">
+                <p class="about-text">
+                    I'm Josephine Duba Kanu, a passionate software engineer from Sierra Leone with expertise in multiple programming languages and software development tools. I'm driven by the potential of technology to solve critical global issues, particularly in healthcare systems, maternal health, prenatal health, youth empowerment, and gender equality.
+                </p>
+                <p class="about-text">
+                    My background combines technical skills with a strong interest in community engagement and social impact. I'm constantly seeking opportunities to apply my software development knowledge to create meaningful solutions that can improve lives and address important challenges in my community and beyond.
+                </p>
+                <div class="contact-info">
+                    <div class="contact-badge"> Kalangba, Bombali District, Sierra Leone</div>
+                    <div class="contact-badge"> +250793224196</div>
+                    <div class="contact-badge"> josephinedubakanu@gmail.com</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-header">
+                <div class="section-icon">🎓</div>
+                <h2 class="section-title">Educational Background</h2>
+            </div>
+            <div class="card">
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3 class="education-title">African Leadership University—Kigali, Rwanda</h3>
+                        <span class="education-date">Jan 2024 - Jan 2025</span>
+                    </div>
+                    <p class="education-degree">B.Sc. Hons Software Engineering</p>
+                    <p><strong>Relevant Coursework:</strong> Self-Leadership & Team Dynamics; Introduction to Software Engineering: Learning Process, Reflective Thinking, Self-Direct Learning, E-LAB; Introduction to Linux & IT tools, Introduction to Programming & Databases, Front-End Web Development, Responsible Enterprise, Web Infrastructure, Enterprise Web Development, Communication for Impact, Foundations Project</p>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3 class="education-title">University of Michigan</h3>
+                        <span class="education-date">Jul 2024 - Jul 2024</span>
+                    </div>
+                    <p><strong>Relevant Coursework:</strong> Data Structures & Programming for Everybody</p>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3 class="education-title">Saint John of God Campus (Lunsar) (U.N.I.M.A.K)</h3>
+                        <span class="education-date">Sep 2022 - Sep 2023</span>
+                    </div>
+                    <p class="education-degree">B.A Hons Nursing</p>
+                    <p><strong>Relevant Coursework:</strong> Fundamentals in Nursing, Sociology, Information & Communication Technology, Anatomy & Psychology, Contemporary Ethics, Pharmacology</p>
+                </div>
+                <a class="download" href="https://drive.google.com/file/d/118VFJHhyr5rVhb1z2og1aM_uoDncu_5M/view?usp=sharing" target="_blank">
+     Download CV
+                </a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header">
+                <div class="section-icon"></div>
+                <h2 class="section-title">Skills</h2>
+            </div>
+            <div class="card">
+                <div class="skills-category">
+                    <h3 class="skills-title">Programming Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Python</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Java</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>C++</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>HTML/CSS</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-title">Other Skills</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Agile Methodology</span>
+                        <span class="skill-tag">Waterfall Methodology</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">Business Project Management</span>
+                        <span class="skill-tag">SPSS</span>
+                        <span class="skill-tag">Project R</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Graphic Design</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Problem-solving</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Adaptability</span>
+                        <span class="skill-tag">Team Management</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-title">Languages</h3>
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <div class="language-name">English</div>
+                            <div class="language-level">Expert</div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">French</div>
+                            <div class="language-level">Beginner</div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">Krio</div>
+                            <div class="language-level">Native</div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">Kinyarwanda</div>
+                            <div class="language-level">Beginner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-header">
+                <div class="section-icon"></div>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Maternal Health Monitoring App</h3>
+                        <p class="project-description">A mobile application designed to help pregnant women track their health metrics, receive reminders for prenatal appointments, and access educational resources about maternal health.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Community Health Data Analysis Tool</h3>
+                        <p class="project-description">A data analysis tool that processes health statistics from local communities to identify trends and areas needing intervention, with a focus on maternal and child health outcomes.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SPSS</span>
+                            <span class="tech-tag">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Youth Empowerment Platform</h3>
+                        <p class="project-description">An online platform connecting young people with mentors, educational resources, and job opportunities to foster personal and professional development.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Healthcare Resource Allocation System</h3>
+                        <p class="project-description">A system that optimizes the distribution of healthcare resources across different regions based on population needs and existing infrastructure.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Algorithm Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests">
+            <div class="section-header">
+                <div class="section-icon"></div>
+                <h2 class="section-title">Interests</h2>
+            </div>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <h3 class="interest-title">Prenatal Health</h3>
+                    <p class="interest-description">Passionate about improving prenatal healthcare systems and outcomes for expectant mothers.</p>
+                </div>
+                <div class="interest-card">
+                    <h3 class="interest-title">Women Empowerment</h3>
+                    <p class="interest-description">Dedicated to initiatives that economically, socially, and politically empower women.</p>
+                </div>
+                <div class="interest-card">
+                    <h3 class="interest-title">Youth Empowerment</h3>
+                    <p class="interest-description">Committed to mentoring and supporting young individuals to achieve their goals.</p>
+                </div>
+                <div class="interest-card">
+                    <h3 class="interest-title">Technology Innovation</h3>
+                    <p class="interest-description">Enthusiastic about exploring emerging technologies and their applications.</p>
+                </div>
+                <div class="interest-card">
+                    <h3 class="interest-title">Solving Global Issues</h3>
+                    <p class="interest-description">Interested in applying technology to address critical global challenges.</p>
+                </div>
+                <div class="interest-card">
+                    <h3 class="interest-title">Conservation</h3>
+                    <p class="interest-description">Concerned about environmental conservation and sustainable practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-header">
+                <div class="section-icon"></div>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+            <div class="card">
+                <div class="contact-grid">
+                    <div class="contact-info-section">
+                        <h3>Get in Touch</h3>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-item-icon"></div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Kalangba, Bombali District, Sierra Leone</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon"></div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>josephinedubakanu@gmail.com</p>
+                                    <p>j.kanu@alustudent.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon"></div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+250793224196</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <h3>Send Message</h3>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Josephine Duba Kanu</h3>
+                    <p>Software Engineer</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/josephine-kanu-3347272a9/" target="_blank" aria-label="LinkedIn">
+                         LinkedIn
+                    </a>
+                    <a href="https://github.com/DubaKanu" target="_blank" aria-label="GitHub">
+                         GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Josephine Duba Kanu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileNav.classList.contains('hidden')) {
+                mobileNav.classList.remove('hidden');
+                menuIcon.textContent = '✕';
+            } else {
+                mobileNav.classList.add('hidden');
+                menuIcon.textContent = '☰';
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.add('hidden');
+            menuIcon.textContent = '☰';
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            alert('Thank you for your message! I will get back to you soon.');
+            event.target.reset();
+        }
+
+        // CV download function
+        function downloadCV() {
+            alert('Please upload your CV to a cloud service (Google Drive, Dropbox, etc.) and update the link in the code. The local file path you provided will not work on the web.');
+        }
+    </script>
+</body>
+</html>
